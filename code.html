@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#add-recipe">Add Recipe</a></li>
+                <li><a href="#search">Search Recipes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to the Recipe Sharing Platform</h2>
+        <p>Explore a variety of recipes shared by our community. Find recipes based on categories or dietary needs.</p>
+    </section>
+
+    <section id="add-recipe">
+        <h2>Add Your Recipe</h2>
+        <form action="/add-recipe" method="POST">
+            <label for="title">Recipe Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+
+            <label for="steps">Steps:</label>
+            <textarea id="steps" name="steps" required></textarea>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="appetizer">Appetizer</option>
+                <option value="main-course">Main Course</option>
+                <option value="dessert">Dessert</option>
+            </select>
+
+            <label for="dietary-needs">Dietary Needs:</label>
+            <select id="dietary-needs" name="dietary_needs">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+            </select>
+
+            <button type="submit">Add Recipe</button>
+        </form>
+    </section>
+
+    <section id="search">
+        <h2>Search Recipes</h2>
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search by keyword, category, or dietary need">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Display search results -->
+        <div id="search-results">
+            <!-- Recipes will be displayed here after search -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Recipe Sharing Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
